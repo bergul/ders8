@@ -67,7 +67,7 @@ const index = () => {
                             {renderStars(item.rating)}
                         </View>
                         <Text style={styles.reviewText}>{item.comment}</Text>
-                        <Text style={styles.reviewText}>{item.reviewerName}</Text>
+                        <Text style={styles.reviewText1}>{item.reviewerName}</Text>
                     </View>
                 )}
             />
@@ -104,12 +104,19 @@ const styles = StyleSheet.create({
         padding: 8,
         borderBottomWidth: 1,
         borderBottomColor: '#ccc',
+        marginBottom: 8,
+
     },
     reviewText: {
         fontSize: 14,
     },
+    reviewText1: {
+        fontSize: 14,
+        fontWeight: 'bold',
+    },
     starsContainer: {
         flexDirection: 'row',
+
     },
 });
 
