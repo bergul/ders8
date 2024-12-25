@@ -60,7 +60,7 @@ const index = () => {
             <Text style={styles.title}>Reviews</Text>
             <FlatList
                 data={reviews}
-                keyExtractor={(item) => item.reviewerEmail}
+                keyExtractor={(item) => item.date}
                 renderItem={({ item }) => (
                     <View style={styles.review}>
                         <View style={styles.starsContainer}>
