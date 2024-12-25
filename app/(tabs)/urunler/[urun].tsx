@@ -42,16 +42,21 @@ const index = () => {
 
     return (
         <View style={styles.container}>
+            <Text style={{ margin: 20, padding: 5, backgroundColor: 'ghostwhite' }}>Ürünler---- <></>{veri.category}-----<></>{veri.title}</Text>
             <Text style={styles.title}>{veri.title}</Text>
-            <ImageSlider images={veri.images} style={styles.image} />
-            <Text style={{ fontSize: 24, fontWeight: 900 }}>
-                {(veri.price - (veri.price * veri.discountPercentage) / 100).toFixed(2)}
-            </Text>
-            <Text style={{ textDecorationLine: 'line-through' }}>
-                {veri.price}
-            </Text>
-            <Text style={styles.description}>{veri.description}</Text>
+            <ImageSlider images={veri.images} style={styles.image}
+            />
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <Text style={{ fontSize: 24, fontWeight: 900 }}>
+                    $ {(veri.price - (veri.price * veri.discountPercentage) / 100).toFixed(2)}
+                </Text>
+                <Text style={{ textDecorationLine: 'line-through', color: 'red', marginLeft: 8 }}>
+                    $ {veri.price}
+                </Text>
+            </View>
+
             <Text style={styles.title}>Details</Text>
+            <Text style={styles.description}>{veri.description}</Text>
             <Text style={styles.title}>Reviews</Text>
             <FlatList
                 data={reviews}
@@ -78,18 +83,22 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 24,
         fontWeight: 'bold',
+        marginBottom: 8,
+        padding: 8,
     },
     scrollView: {
         marginVertical: 16,
     },
     image: {
         width: viewportWidth,
-        height: 200,
+        height: 450,
         resizeMode: 'cover',
     },
     description: {
-        fontSize: 16,
-        marginVertical: 8,
+        fontSize: 18,
+        margin: 20,
+        padding: 20,
+        borderWidth: 1,
     },
     review: {
         padding: 8,
