@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useSearchParams } from 'expo-router/build/hooks'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ImageSlider from 'react-native-image-slider'; // Add this import
+import { Link } from 'expo-router';
 const { width: viewportWidth } = Dimensions.get('window');
 
 const index = () => {
@@ -42,7 +43,7 @@ const index = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={{ margin: 20, padding: 5, backgroundColor: 'ghostwhite' }}>Ürünler---- <></>{veri.category}-----<></>{veri.title}</Text>
+            <Text style={{ margin: 20, padding: 5, backgroundColor: 'ghostwhite' }}>Ürünler---- <></> <Link href={`/(tabs)/products/?category=${veri.category}`} style={{ color: 'blue' }}>{veri.category}-----</Link><></>{veri.title}</Text>
             <Text style={styles.title}>{veri.title}</Text>
             <ImageSlider images={veri.images} style={styles.image}
             />
